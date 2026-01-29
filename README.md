@@ -5,18 +5,25 @@ Public marketing and content site for **wealthos.in**. The app lives at **[app.w
 ## Tech stack
 
 - **Next.js 15** (App Router), **TypeScript**, **Tailwind CSS**
+- **Runtime / package manager:** [Bun](https://bun.sh/) (Node-compatible; faster installs and runtime)
 - **Content:** Markdown files in `content/` (e.g. `content/blog/`, `content/pages/`)
 - **Rendering:** Static (SSG) at build time for speed and SEO
 - No CMS, no database — content is files in the repo only
 
 ## Run locally
 
+[Install Bun](https://bun.sh/) (`curl -fsSL https://bun.sh/install | bash`), then:
+
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
+Commit `bun.lockb` after the first `bun install` for reproducible installs (and Docker builds).
+
 Open [http://localhost:3000](http://localhost:3000).
+
+Alternatively, use **Make**: `make install`, `make dev`, or `make help` for all targets.
 
 ## Add a blog post
 
@@ -90,9 +97,11 @@ Replace `@your-github-org/marketing-manager` and `@your-github-org/developers` w
 ## Build
 
 ```bash
-npm run build
-npm start
+bun run build
+bun start
 ```
+
+(Or `bun run build` then `bun run start`.)
 
 ---
 
