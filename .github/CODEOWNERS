@@ -1,0 +1,10 @@
+# Content: manager/marketing team approves
+/content/  @your-github-org/marketing-manager
+
+# Code and config: only developers approve
+/app/      @your-github-org/developers
+/lib/      @your-github-org/developers
+/components/  @your-github-org/developers
+*.json     @your-github-org/developers
+*.ts       @your-github-org/developers
+*.tsx      @your-github-org/developers

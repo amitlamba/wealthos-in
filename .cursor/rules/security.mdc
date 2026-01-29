@@ -1,0 +1,41 @@
+---
+description: Security rules for public repo — never expose secrets, credentials, or sensitive config
+alwaysApply: true
+---
+
+# Security (Public Repo)
+
+This project is a **public repository**. Do not introduce or suggest anything that could expose sensitive data or create vulnerabilities.
+
+## Never in Code or Commits
+
+- **Secrets**: API keys, tokens, passwords, signing keys, webhook secrets
+- **Credentials**: Database URLs, auth credentials, OAuth client secrets
+- **Internal-only URLs**: Staging/admin URLs, internal APIs, non-public endpoints
+- **PII**: Real emails, names, or identifiers (use placeholders in examples)
+- **`.env`** or any file containing real env values — only `.env.example` with safe placeholders
+
+## Environment Variables
+
+- This project is a **marketing/static site** — it does **not** call a backend. Do not add API keys, auth tokens, or backend credentials.
+- Use env vars only for public, non-secret config (e.g. `NEXT_PUBLIC_SITE_URL`). Only `NEXT_PUBLIC_*` is needed; these are bundled and visible, so never put secrets here.
+- Ensure `.gitignore` includes: `.env`, `.env.local`, `.env.*.local`.
+
+## Safe Patterns
+
+```typescript
+// ✅ OK — public URL, safe default (only kind of env needed here)
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://wealthos.in";
+```
+
+```typescript
+// ❌ BAD — no backend calls from this repo; do not add API keys or secrets
+const apiKey = process.env.API_KEY;
+const apiKey = "sk_live_abc123...";
+```
+
+## When Adding Features
+
+- Do not add backend API calls, API keys, webhook secrets, or auth credentials.
+- No real internal URLs or IPs; use only public URLs (e.g. `NEXT_PUBLIC_SITE_URL`) with safe defaults.
+- In docs or README, use placeholders (e.g. `https://your-domain.com`), never real secrets.

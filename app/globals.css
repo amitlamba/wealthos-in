@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.prose-content h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-foreground;
+}
+.prose-content h2 {
+  @apply text-2xl font-semibold mt-6 mb-3 text-foreground;
+}
+.prose-content h3 {
+  @apply text-xl font-semibold mt-4 mb-2 text-foreground;
+}
+.prose-content p {
+  @apply mb-4 text-foreground;
+}
+.prose-content ul {
+  @apply list-disc pl-6 my-4;
+}
+.prose-content ol {
+  @apply list-decimal pl-6 my-4;
+}
+.prose-content li {
+  @apply mb-1 text-foreground;
+}
+.prose-content a {
+  @apply text-primary underline hover:no-underline;
+}
