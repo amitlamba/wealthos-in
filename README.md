@@ -1,6 +1,6 @@
 # Wealth OS Marketing Site
 
-Public marketing and content site for **wealthos.in**. The app lives at **[app.wealthos.in](https://app.wealthos.in)** and is in a separate private repo.
+Public marketing and content site for **[wealthos.in]((https://www.wealthos.in)**. The app lives at **[app.wealthos.in](https://app.wealthos.in)** and is in a separate private repo.
 
 ## Tech stack
 
